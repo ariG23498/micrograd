@@ -104,7 +104,7 @@ class Value(object):
 
         # Create a new Value node that will be the output of
         # the multiplication.
-        out = Value(self.data * other.data, (self, other), "*")
+        out = Value(data=self.data * other.data, _children=(self, other))
 
         def _backward():
             # Local gradient:
